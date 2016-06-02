@@ -28,19 +28,19 @@ That would be:
 
 ```bash
 # Fitbit adapter db info.
-launchctl setenv TWILIO_POSTGRESQL_SERVER localhost
-launchctl setenv TWILIO_ADAPTER_POSTGRESQL_DB_USERNAME bjondhealth
-launchctl setenv TWILIO_ADAPTER_POSTGRESQL_DB_PASSWORD bjondhealth
-launchctl setenv TWILIO_ADAPTER_APP_NAME twilio-adapter
-launchctl setenv TWILIO_ADAPTER_POSTGRESQL_DB_HOST localhost
-launchctl setenv TWILIO_ADAPTER_POSTGRESQL_DB_PORT 5432
-launchctl setenv TWILIO_ADAPTER_PUBLIC_URL http://localhost:8080
-launchctl setenv TWILIO_ADAPTER_PORT 8080
+launchctl setenv FITBIT_POSTGRESQL_SERVER localhost
+launchctl setenv FITBIT_ADAPTER_POSTGRESQL_DB_USERNAME bjondhealth
+launchctl setenv FITBIT_ADAPTER_POSTGRESQL_DB_PASSWORD bjondhealth
+launchctl setenv FITBIT_ADAPTER_APP_NAME fitbit-adapter
+launchctl setenv FITBIT_ADAPTER_POSTGRESQL_DB_HOST localhost
+launchctl setenv FITBIT_ADAPTER_POSTGRESQL_DB_PORT 5432
+launchctl setenv FITBIT_ADAPTER_PUBLIC_URL http://localhost:8080
+launchctl setenv FITBIT_ADAPTER_PORT 8080
 
 # JWT for Fitbit
-launchctl setenv TWILIO_BJOND_ADAPTER_SUBJECT [Configured in Bjönd UI]
-launchctl setenv TWILIO_BJOND_ADAPTER_AUDIENCE [Configured in Bjönd UI]
-launchctl setenv TWILIO_BJOND_SERVER_ENCRYPTION_KEY [Assigned Automatically in Bjönd UI]
+launchctl setenv FITBIT_BJOND_ADAPTER_SUBJECT [Configured in Bjönd UI]
+launchctl setenv FITBIT_BJOND_ADAPTER_AUDIENCE [Configured in Bjönd UI]
+launchctl setenv FITBIT_BJOND_SERVER_ENCRYPTION_KEY [Assigned Automatically in Bjönd UI]
 ```
 
 You can set these in the terminal, but you will need to restart Ecipse for them to be available after changing any of these.
@@ -50,7 +50,7 @@ You can set these in the terminal, but you will need to restart Ecipse for them 
 You must set up a PostgreSQL database named 'fitbit-adapter'. 
 
 ```bash
-create_db -U bjondhealth fitbit-adapter
+createdb -U bjondhealth fitbit-adapter
 ```
 
 Once you have the variables set and ready, you will need to make sure you add the connection into to your standalone.xml. Add the following to the 'datasources' section under 

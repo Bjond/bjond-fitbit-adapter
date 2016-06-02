@@ -95,13 +95,13 @@ public class FitbitAdapterService {
     /////////////////////////////////////////////////////////////////////////
     private static final String CLAIM_KEY                   = "json";
     final private static String ISSUER                      = "Bjönd, Inc.";
-    final private static String BJOND_ADAPTER_SUBJECT       = System.getenv("SLACK_BJOND_ADAPTER_SUBJECT");
-    final private static String BJOND_ADAPTER_AUDIENCE      = System.getenv("SLACK_BJOND_ADAPTER_AUDIENCE");
-    final private static String BJOND_SERVER                = System.getenv("SLACK_BJOND_SERVER");
-    final private static String BJOND_SERVER_ENCRYPTION_KEY = System.getenv("SLACK_BJOND_SERVER_ENCRYPTION_KEY");
+    final private static String BJOND_ADAPTER_SUBJECT       = System.getenv("FITBIT_BJOND_ADAPTER_SUBJECT");
+    final private static String BJOND_ADAPTER_AUDIENCE      = System.getenv("FITBIT_BJOND_ADAPTER_AUDIENCE");
+    final private static String BJOND_SERVER                = System.getenv("FITBIT_BJOND_SERVER");
+    final private static String BJOND_SERVER_ENCRYPTION_KEY = System.getenv("FITBIT_BJOND_SERVER_ENCRYPTION_KEY");
     final private static String UUID_REGEX                  = "^[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}$";
     
-    @PersistenceContext(unitName = "bjondslackadapter", type = PersistenceContextType.TRANSACTION)
+    @PersistenceContext(unitName = "bjondfitbitadapter", type = PersistenceContextType.TRANSACTION)
     @Getter private EntityManager entityManager;
 
     // Demonstrates that CDI is indeed working.
@@ -114,7 +114,7 @@ public class FitbitAdapterService {
     
     @PostConstruct
     protected void startService()  {
-        log.info("SlackAdapterService has started...");
+        log.info("FitbitAdapterService has started...");
         
         if(StringUtils.isBlank(BJOND_SERVER)) {
             log.warn("The BJOND_SERVER environment variable is not set!");

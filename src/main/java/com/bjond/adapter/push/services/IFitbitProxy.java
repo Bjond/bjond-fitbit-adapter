@@ -9,6 +9,7 @@ import javax.ws.rs.core.MediaType;
 
 public interface IFitbitProxy {
 	
+	// Keeping this as an example. This is from the Axis adapter, but will call the FitBit API. -BCF
 	@POST
 	@Path("/axisWebServices/api/dataIntake/takeAdmissionOrDischarge")
 	@Produces(MediaType.APPLICATION_JSON)

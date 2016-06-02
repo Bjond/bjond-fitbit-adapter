@@ -27,6 +27,7 @@ public class FitbitAdapter {
 	private String description;
 	private String iconURL;
 	private String rootEndpoint;
+	private String configURL;
 	private Set<FitbitEvent> integrationEvent = new HashSet<>();
 	private Set<FitbitConsequence> integrationConsequence = new HashSet<>();
 }
