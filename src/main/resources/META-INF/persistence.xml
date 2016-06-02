@@ -1,0 +1,36 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+  <persistence-unit name="bjondfitbitadapter" transaction-type="JTA">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <jta-data-source>java:jboss/datasources/FitBitAdapterDS</jta-data-source>
+    <class>com.bjond.persistence.bjondservice.BjondService</class>
+    <class>com.bjond.persistence.bjondservice.GroupConfiguration</class>
+    <shared-cache-mode>ALL</shared-cache-mode>
+    <properties>
+        <!-- Switching to 'validate' to have it check the schema; we will use flyway to manage our schema. -->
+        <property name="hibernate.hbm2ddl.auto" value="validate"/>
+        
+        <!-- Set to false when you no longer wish to see SQL stream by the sever.log -->
+        <property name="hibernate.show_sql" value="false"/>      
+        
+        <!-- I wouldn't touch these if I were you. -->
+        <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+        <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
+
+        <property name="hibernate.cache.infinispan.statistics" value="true"/>
+        <property name="hibernate.cache.use_second_level_cache" value="true" />
+        <property name="hibernate.cache.use_query_cache" value="true" />    
+        <property name="hibernate.cache.infinispan.cachemanager" value="java:jboss/infinispan/entity" />
+        <property name="hibernate.cache.region.factory_class" value="org.jboss.as.jpa.hibernate4.infinispan.InfinispanRegionFactory"/> 
+        <property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.JBossTransactionManagerLookup"/>
+        <property name="hibernate.transaction.factory_class" value="org.hibernate.transaction.CMTTransactionFactory"/> 
+        <property name="hibernate.generate_statistics" value="true" />
+    </properties>
+
+  </persistence-unit>
+</persistence>
