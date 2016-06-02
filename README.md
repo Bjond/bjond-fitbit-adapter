@@ -6,7 +6,7 @@ This adapter will allow the bjönd rule engine to respond to fitbit events.
 The following environment variables will need to be set in your development environment.
 
 ```bash
-# Slack adapter db info.
+# Fitbit adapter db info.
 export FITBIT_POSTGRESQL_SERVER=localhost
 export FITBIT_ADAPTER_POSTGRESQL_DB_USERNAME=bjondhealth
 export FITBIT_ADAPTER_POSTGRESQL_DB_PASSWORD=bjondhealth
@@ -16,7 +16,7 @@ export FITBIT_ADAPTER_POSTGRESQL_DB_PORT=5432
 export FITBIT_ADAPTER_PUBLIC_URL=http://localhost:8080
 export FITBIT_ADAPTER_PORT=8080
 
-# JWT for Slack
+# JWT for Fitbit
 export FITBIT_BJOND_ADAPTER_SUBJECT=[Configured in Bjönd UI]
 export FITBIT_BJOND_ADAPTER_AUDIENCE=[Configured in Bjönd UI]
 export FITBIT_BJOND_SERVER_ENCRYPTION_KEY=[Assigned Automatically in Bjönd UI]
@@ -27,7 +27,7 @@ Note- if you are using OS X and are running the server in eclipse, you need to a
 That would be:
 
 ```bash
-# Slack adapter db info.
+# Fitbit adapter db info.
 launchctl setenv TWILIO_POSTGRESQL_SERVER localhost
 launchctl setenv TWILIO_ADAPTER_POSTGRESQL_DB_USERNAME bjondhealth
 launchctl setenv TWILIO_ADAPTER_POSTGRESQL_DB_PASSWORD bjondhealth
@@ -37,7 +37,7 @@ launchctl setenv TWILIO_ADAPTER_POSTGRESQL_DB_PORT 5432
 launchctl setenv TWILIO_ADAPTER_PUBLIC_URL http://localhost:8080
 launchctl setenv TWILIO_ADAPTER_PORT 8080
 
-# JWT for Slack
+# JWT for Fitbit
 launchctl setenv TWILIO_BJOND_ADAPTER_SUBJECT [Configured in Bjönd UI]
 launchctl setenv TWILIO_BJOND_ADAPTER_AUDIENCE [Configured in Bjönd UI]
 launchctl setenv TWILIO_BJOND_SERVER_ENCRYPTION_KEY [Assigned Automatically in Bjönd UI]
